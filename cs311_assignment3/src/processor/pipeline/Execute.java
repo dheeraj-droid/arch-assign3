@@ -30,7 +30,6 @@ public class Execute {
 		{
 			
 			Instruction instruction = OF_EX_Latch.getInstruction();
-			System.out.println(instruction);
 			OperationType opertn = instruction.getOperationType();
 			OperationType[] op_ty = OperationType.values();
 			int op_ind = 0;
@@ -41,14 +40,11 @@ public class Execute {
 					op_ind=i;
 				}
 			}
-			System.out.println(op_ind);
 			int currentPC = containingProcessor.getRegisterFile().getProgramCounter()-1;
 			EX_MA_Latch.setInstruction(instruction);
 			int alu_result=0;
 			if(op_ind<21 && op_ind%2==0)
 			{
-				System.out.println(containingProcessor.getRegisterFile().getValue(instruction.getSourceOperand1().getValue()));
-				System.out.println(containingProcessor.getRegisterFile().getValue(instruction.getSourceOperand2().getValue()));
 				int op1=containingProcessor.getRegisterFile().getValue(instruction.getSourceOperand1().getValue());
 				int op2=containingProcessor.getRegisterFile().getValue(instruction.getSourceOperand2().getValue());
 				switch(opertn)
