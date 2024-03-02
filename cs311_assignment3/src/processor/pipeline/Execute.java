@@ -30,6 +30,7 @@ public class Execute {
 		{
 			
 			Instruction instruction = OF_EX_Latch.getInstruction();
+			System.out.println(instruction);
 			OperationType opertn = instruction.getOperationType();
 			OperationType[] op_ty = OperationType.values();
 			int op_ind = 0;
