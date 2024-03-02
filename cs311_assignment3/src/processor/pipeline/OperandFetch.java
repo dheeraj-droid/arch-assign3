@@ -56,7 +56,6 @@ public class OperandFetch {
         int two=1;
         if(String.valueOf(str.charAt(0))==String.valueOf("1"))
         {
-			System.out.println("h");
            for(int i=str.length()-1;i>=0;i--)
            {
             num=num-Integer.parseInt(String.valueOf(str.charAt(i)))*two;

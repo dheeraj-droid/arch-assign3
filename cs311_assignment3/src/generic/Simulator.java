@@ -54,9 +54,10 @@ public class Simulator {
 			processor.getMAUnit().performMA();
 			processor.getRWUnit().performRW();
 			Clock.incrementClock();
+			Statistics.setNumberOfInstructions(Statistics.getNumberOfInstructions() + 1);
+			Statistics.setNumberOfCycles(Statistics.getNumberOfCycles() + 1);
 		}
-		Statistics.setNumberOfInstructions(Statistics.getNumberOfInstructions() + 1);
-		Statistics.setNumberOfCycles(Statistics.getNumberOfCycles() + 1);
+		
 	}
 	
 	public static void setSimulationComplete(boolean value)
